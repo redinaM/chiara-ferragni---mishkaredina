@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Chiara Ferragni</title>
+        <link rel="icon" href="./icon.jpg">
+        <link rel="stylesheet" href="./login.css">
+    </head>
+
+<body>
+    <div class="loginbox">
+        <div class="row">
+            <div class="rightcolumn">
+                <div class="full-login">
+                    <div id='login-form'class='login-page'>
+                        <div class="form-box">
+                            <div class='button-box'>
+                                <div id='btn'></div>
+                                <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                                <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                            </div>
+                            <form id='login' class='input-group-login'>
+                        <input id="email" type='text'class='input-field'placeholder='Enter Email' required >
+                        <input id="pass" type='password'class='input-field'placeholder='Enter Password' required>
+                       <br>
+                       <br>
+                        <input type="checkbox" id="check" name="remember" value="remember">
+                        <label for="remember"> Remember password</label><br>
+                        <br>
+                        <p id="button1" style="color: #e497b0;"></p>
+                        <br>
+                        <br>
+                        <button id="button1" type='button'class='submit-btn' onclick="chkPassword()">Log in</button>
+                        <br>
+                            <p><button type="button" class='submit-btn' id="site22" onclick="document.location='main.html'" style="visibility: hidden;" >Enter Site</button></p>
+                        <br>
+                        <br>
+                        </form>
+                     <form id='register' class='input-group-register'>
+                         <input type='text'class='input-field'placeholder='Enter First Name' required>
+                         <input type='text'class='input-field'placeholder='Enter Last Name ' required>
+                         <input type='email'class='input-field'placeholder='Enter Email' required>
+                         <input type='password'class='input-field'placeholder='Enter Password' required>
+                         <input type='password'class='input-field'placeholder='Confirm Password'  required>
+                         <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
+                                <button type='submit'class='submit-btn' onclick="document.location='main.html'">Register</button>
+                         </form>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var x=document.getElementById('login');
+                    var y=document.getElementById('register');
+                    var z=document.getElementById('btn');
+                    function register()
+                    {
+                        x.style.left='-400px';
+                        y.style.left='50px';
+                        z.style.left='110px';
+                    }
+                    function login()
+                    {
+                        x.style.left='50px';
+                        y.style.left='450px';
+                        z.style.left='0px';
+                    }
+                </script>
+                <script>
+                    var modal = document.getElementById('login-form');
+                    window.onclick = function(event) 
+                    {
+                        if (event.target == modal) 
+                        {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+                
+                <script>
+                    function chkPassword()
+                    {
+                    
+                    var w=document.getElementById('email')
+                    var y=document.getElementById('pass');
+                    var x;
+                    var passwd = "admin123@";
+                    
+                    if (w.value!="" && y.value!="")
+                    {
+                    
+                    var r=confirm("You have entered a password!");
+                    
+                    if (r==true)
+                      {
+                        
+                      if (passwd == y.value)  {
+                      x="Your Password is Correct Now You Can Enter the Site!";   
+                      document.getElementById("button1").innerHTML=x;
+                      document.getElementById("site22").style.visibility="visible";
+                      return true;
+                      }
+                      else if (passwd != y.value) {
+                      x="Your Password is not Correct";
+                      document.getElementById("button1").innerHTML=x;
+                      return false;
+                      }
+                      }
+                      
+                    }else { x="Your Login is missing"; document.getElementById("button1").innerHTML=x; return false;}
+
+                    
+                    }
+                    </script>
+                    
+            
+            </div>
+
+            <div class="leftcolumn">
+                <img src="./login-logo.png" alt="chiaraferragni-logo" width="210px" height="500px"
+                style="padding-left: 58%; padding-top: 1.42%;">
+                
+            </div>
+
+        </div>
+    </div>
+   
+</body>
+</html>
